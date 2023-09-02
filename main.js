@@ -1,4 +1,14 @@
 var mainEl=document.getElementById('mainDiv')
+
+
+//general
+function getTextInTag(strTag, strText=""){
+    return `<${strTag}>${strText}</${strTag}>`
+}
+function getTextInTagWithAtt(strTag, strAtt ,strText=""){
+    return `<${strTag} ${strAtt}>${strText}</${strTag}>`
+}
+
 function alertWelcome(){
     alert("welcome in")
 }
@@ -129,3 +139,56 @@ function addGuessNumberV2(inpDest){
         lotto2Arr=[]
     }
 }
+
+function changeColGeneral(changeEl,newColor){
+    changeEl.style.color= newColor;
+}
+
+//11
+function restrictMinorAccess(){
+    var welcomeEl= document.getElementById('welcomeInDiv');
+    if(+prompt("enter your age")>18)
+    {
+        welcomeEl.style.color='blue'
+        welcomeEl.innerHTML='Welcome In'
+        welcomeEl.onmouseover= function(){changeColGreen(this);};
+        welcomeEl.onmouseleave= function(){changeColGeneral(this,'blue');};
+        familyForm.style.display='flex';
+    }
+    else{
+        welcomeEl.style.color='red'
+        welcomeEl.innerHTML='no Access'
+        welcomeEl.style.backgroundColor='black'
+        welcomeEl.innerHTML+= "<br>"+ getTextInTagWithAtt('img',"src='resources/200w.gif' alt='noentry_gif'")
+        setTimeout(function(){
+            location.reload();
+        },6000)
+    
+    }
+
+}
+var fullNamesArr=[]
+
+function sendFamilyForm(){
+    console.log('hello');
+    
+    var lNameElem= document.getElementById('familyLName');
+    var fNameElemCol =document.getElementsByClassName('familyFName');
+    familyForm.style.display='none';
+    var printNames= document.getElementById('namesOutPut')
+    printNames.innerHTML+=getTextInTag('h2','Your Family:')
+    console.log(fNameElemCol)
+    for (let i = 0; i < fNameElemCol.length; i++) {
+        var curNameValue= fNameElemCol[i].value;
+        var fullName= `${curNameValue} ${lNameElem.value}`;
+        if(lNameElem.value[0]==curNameValue[0]){
+            printNames.innerHTML+= getTextInTagWithAtt('p',`style='color:blue;'`,fullName)
+        }else{
+            printNames.innerHTML+= getTextInTag('p',fullName)
+        }
+
+        fullNamesArr.push(fullName)
+    }
+}
+
+restrictMinorAccess()

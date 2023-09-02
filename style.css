@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    text-align: center;
+    
+}
+#familyForm{
+    display: none;
+    flex-direction: column;
+}

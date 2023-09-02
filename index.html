@@ -3,27 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
     <title>Document</title>
 </head>
 <body>
     <main id="mainDiv">
-    <!-- <h1 onmouseover="alertWelcome()" style="border: 1px solid;">hello</h1>
-    <div onmouseover="printHour('div2')" id="div2" style="border: 1px solid;">hello</div>
-    <h3 id="task3"  onmouseover="changeBgPurple('task3')">task 3</h3>
-    <button id="task4"  >this is a button</button> 
-    <p onclick="changeWidth('task4')"></p> -->
+        <h1 id="welcomeInDiv"></h1>
+        <form action="" id="familyForm">
+            <label for="lName1"></label>
+            <input type="text" name="lName" id="familyLName">
+            <label for="fName1"></label>
+            <input type="text" name="fName1" class="familyFName">
+            <label for="fName2"></label>
+            <input type="text" name="fName2" class="familyFName">
+            <label for="fName3"></label>
+            <input type="text" name="fName3" class="familyFName">
+            <label for="fName4"></label>
+            <input type="text" name="fName4" class="familyFName">
+            <button type="reset">Reset form</button>
+            <button type="button" onclick="sendFamilyForm()">Send</button>
+        </form>
+        <div id="namesOutPut"></div>
+        <!-- <h1 onmouseover="alertWelcome()" style="border: 1px solid;">hello</h1>
+        <div onmouseover="printHour('div2')" id="div2" style="border: 1px solid;">hello</div>
+        <h3 id="task3"  onmouseover="changeBgPurple('task3')">task 3</h3>
+        <button id="task4"  >this is a button</button> 
+        <p onclick="changeWidth('task4')"></p> -->
 
-    <p onclick="changeTextAnother('task5Cont')" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    <p id="task5Cont">Lorem, ipsum.</p>
+        <p onclick="changeTextAnother('task5Cont')" >Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p id="task5Cont">Lorem, ipsum.</p>
 
-    <input type="text" id="task6Input">
-    <button  onclick="printToScreenVal('task6Input')">press me</button>
+        <input type="text" id="task6Input">
+        <button  onclick="printToScreenVal('task6Input')">press me</button>
 
-    <h2 id="timeGreet"></h2>
+        <h2 id="timeGreet"></h2>
 
-    <input de type="number" id="lottoInput"  placeholder="guess number (0-56)">
-    <button onclick="addGuessNumberV2('lottoInput')">guess the number</button>
-   
+        <input de type="number" id="lottoInput"  placeholder="guess number (0-56)">
+        <button onclick="addGuessNumberV2('lottoInput')">guess the number</button>
+    
     </main>
     <script src="main.js"></script>
 </body>
